@@ -1,0 +1,21 @@
+{
+    "os": "Linux-4.14.276-211.499.amzn2.x86_64-x86_64-with-debian-10.6",
+    "python": "3.7.10",
+    "heartbeatAt": "2022-06-23T20:10:06.706804",
+    "startedAt": "2022-06-23T20:09:57.558695",
+    "docker": null,
+    "cpu_count": 2,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/Lurrobert/AI4CODE.git",
+        "commit": "9eff91e3a7a6a93448e80a1e201501d804ebc4f3"
+    },
+    "email": "gentleman713[Alone",
+    "root": "/root/AI4code",
+    "host": "datascience-1-0-ml-t3-large-0bad7d260cee65d9c0aec85f8bab",
+    "username": "root",
+    "executable": "/opt/conda/bin/python"
+}

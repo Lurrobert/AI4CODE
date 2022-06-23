@@ -1,0 +1,64 @@
+2022-06-23 19:57:33,823 INFO    MainThread:1703 [internal.py:wandb_internal():93] W&B internal server running at pid: 1703, started at: 2022-06-23 19:57:33.818367
+2022-06-23 19:57:33,825 INFO    WriterThread:1703 [datastore.py:open_for_write():75] open: /root/AI4code/wandb/run-20220623_195732-2i3c1yks/run-2i3c1yks.wandb
+2022-06-23 19:57:33,833 DEBUG   SenderThread:1703 [sender.py:send():235] send: header
+2022-06-23 19:57:33,833 DEBUG   SenderThread:1703 [sender.py:send():235] send: run
+2022-06-23 19:57:33,985 ERROR   SenderThread:1703 [internal_api.py:execute():143] 401 response executing GraphQL.
+2022-06-23 19:57:33,985 ERROR   SenderThread:1703 [internal_api.py:execute():144] {"errors":[{"message":"user is not logged in","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2022-06-23 19:57:34,826 INFO    HandlerThread:1703 [handler.py:finish():806] shutting down handler
+2022-06-23 19:57:34,830 INFO    WriterThread:1703 [datastore.py:close():279] close: /root/AI4code/wandb/run-20220623_195732-2i3c1yks/run-2i3c1yks.wandb
+2022-06-23 19:57:34,835 ERROR   MainThread:1703 [internal.py:wandb_internal():165] Thread SenderThread:
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 102, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 140, in execute
+    return self.client.execute(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 39, in execute
+    request.raise_for_status()
+  File "/opt/conda/lib/python3.7/site-packages/requests/models.py", line 1022, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/wandb/apis/normalize.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 1319, in upsert_run
+    response = self.gql(mutation, variable_values=variable_values, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 118, in __call__
+    if not check_retry_fn(e):
+  File "/opt/conda/lib/python3.7/site-packages/wandb/util.py", line 883, in no_retry_auth
+    raise CommError("Invalid or missing api_key. Run `wandb login`")
+wandb.errors.CommError: Invalid or missing api_key. Run `wandb login`
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/internal_util.py", line 51, in run
+    self._run()
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/internal_util.py", line 102, in _run
+    self._process(record)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/internal.py", line 310, in _process
+    self._sm.send(record)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/sender.py", line 237, in send
+    send_handler(record)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/sender.py", line 695, in send_run
+    self._init_run(run, config_value_dict)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/sender.py", line 733, in _init_run
+    commit=run.git.last_commit or None,
+  File "/opt/conda/lib/python3.7/site-packages/wandb/apis/normalize.py", line 58, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/opt/conda/lib/python3.7/site-packages/wandb/apis/normalize.py", line 22, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 1319, in upsert_run
+    response = self.gql(mutation, variable_values=variable_values, **kwargs)
+  File "/opt/conda/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 118, in __call__
+    if not check_retry_fn(e):
+  File "/opt/conda/lib/python3.7/site-packages/wandb/util.py", line 883, in no_retry_auth
+    raise CommError("Invalid or missing api_key. Run `wandb login`")
+wandb.errors.CommError: Invalid or missing api_key. Run `wandb login`
+2022-06-23 19:57:36,852 INFO    MainThread:1703 [internal.py:handle_exit():80] Internal process exited
