@@ -1,6 +1,1 @@
-there is russian, chinses language
-'"print('Строк в трейне:', train_df.shape[0])\nprint('Строк в тесте', test_df.shape[0])"
-H: check how many and does it make sense to translatr it?
-
-there are markdown formats in html --> Remove: 
-<b>📌 Observations :</b>\n* Columns from **heroes** to **heroes_nationality** has same about of missing data. Seems W...
+!python -m spacy download en_core_web_lg
