@@ -2,3 +2,4 @@ data/
 environment/
 .ipynb_checkpoints/
 glossary_matrix
+distilbert-base-uncased/
