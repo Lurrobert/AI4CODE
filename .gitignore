@@ -4,3 +4,5 @@ environment/
 glossary_matrix
 distilbert-base-uncased/
 after_pipe.csv
+AI4Code.zip
+env/kaggle.json

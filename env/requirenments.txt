@@ -1,0 +1,9 @@
+numpy==1.19.5
+pandas==0.25.3
+xgboost
+spacy
+contextualSpellCheck
+black
+sentence-transformers
+autocorrect
+beautifulsoup4
