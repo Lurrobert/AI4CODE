@@ -3,3 +3,4 @@ environment/
 .ipynb_checkpoints/
 glossary_matrix
 distilbert-base-uncased/
+after_pipe.csv
